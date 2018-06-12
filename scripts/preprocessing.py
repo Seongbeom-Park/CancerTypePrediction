@@ -17,6 +17,7 @@ dataset = pd.read_csv(input)
 with open(output_prefix + "_gene.csv", "w") as gene_dataset:
     genes = dataset.groupby('Gene_Name').size().reset_index(name='Count')
     gene_index, gene_name = pd.factorize(genes['Gene_Name'])
+    gene_dataset.write("Gene_Name,Index\n")
     for i in gene_index:
         gene = gene_name[i]
         gene_dataset.write("{},{}\n".format(gene,i))
