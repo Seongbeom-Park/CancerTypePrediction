@@ -36,6 +36,15 @@ test_sample = shuffle_samples[train_sample_size:]
 train_dataset = dataset[dataset['Tumor_Sample_ID'].isin(train_sample['Tumor_Sample_ID'])]
 test_dataset = dataset[dataset['Tumor_Sample_ID'].isin(test_sample['Tumor_Sample_ID'])]
 
+# train sample indexing
+train_dataset = pd.unique(pd.read_csv(output_prefix+"/train.csv"))
+
+with open(output_prefix + "_sample.csv", "w") as sample_dataset:
+    sample_dataset.write("Tumor_Sample_ID,Tumor_Sample_Index\n")
+    for i in range(len(train_sample)):
+        line = "{},{}".format(train_sample['Tumor_Sample_ID'].iloc[i], i)
+        sample_dataset.write(line+'\n')
+
 # save train and test dataset
 train_dataset.to_csv(output_prefix + "_train.csv", sep=',', index=False)
 test_dataset.to_csv(output_prefix + "_test.csv", sep=',', index=False)
