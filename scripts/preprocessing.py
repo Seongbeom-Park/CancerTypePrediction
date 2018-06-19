@@ -5,9 +5,13 @@ COLUMN_NAMES = [ 'Cancer_Type', 'Tumor_Sample_ID', 'Gene_Name',
                  'Chromosome', 'Start_Position', 'End_Position',
                  'Variant_Type', 'Reference_Allele','Tumor_Allele' ]
 
+CANCER_NAMES = [ 'BRCA', 'COADREAD', 'GBM', 'LUAD', 'OV', 'UCEC' ]
+
 # usage: python split_data.py <input> <fraction> <output_prefix>
+# usage: python split_data.py <input> <count> <output_prefix>
 input = sys.argv[1]
-fraction = float(sys.argv[2])
+#fraction = float(sys.argv[2])
+count = int(sys.argv[2])
 output_prefix = sys.argv[3]
 
 # load data
