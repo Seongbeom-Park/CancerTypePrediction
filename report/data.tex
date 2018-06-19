@@ -1,0 +1,9 @@
+\section{Data Analysis}
+
+The provided dataset (TCGA\_6\_Cancer\_Type\_Mutation\_List) has total 2284 tumor samples (i.e., Tumor\_Sample\_IDs), each of sample is classified into one of the six cancer types (i.e., BRCA, COADREAD, GBM, LUAD, OV, and UCEC). The number of samples of each cancer type is 977 (BRCA), 223 (COADREAD), 290 (GBM), 230 (LUAD), 316 (OV), and 248 (UCEC), respectively. 
+
+We randomly selected 457 samples from the entire dataset to generate the test dataset and the remaining samples are used for the training dataset. The ratio of samples included in each cancer type to the total samples is same in the entire, test, and training datasets.
+
+Each sample has different number of mutations. For example, the first sample (i.e., TCGA-A1-A0SB) has 17 mutations and the second sample (i.e., TCGA-A1-A0SD) has 25 samples. To describe mutations of each sample, we use one-hot encoding for the gene list and perform reduction for the mutations of each sample. Each sample has a vector with 20743 (i.e., the total number of genes in the entire dataset) elements, each of element represent a gene. An element is marked as '1' if the sample has a mutation on the gene. Otherwise (i.e., the gene is not mutated), it is marked as '0'. We mark multiple mutations on the same gene as '1' and omit the mutation type information (e.g., variant type, reference allele, tumor allele) to avoid over-complicating the classification problem.
+
+In summary, a tumor sample is transformed to which label is a cancer type and feature is a tensor that represents mutated genes.

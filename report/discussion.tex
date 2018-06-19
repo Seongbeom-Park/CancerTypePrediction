@@ -1,0 +1,15 @@
+\section{Discussion}
+
+\subsection{Enhance prediction accuracy}
+
+To simplify the problem for managing training and testing time, we used whether the gene is mutated as binary information. If variant type of each mutation is used for the model, prediction accuracy of the model can be enhanced.
+
+If we had more dataset, we could use upsampling or downsampleing to balance the portion of each cancer type in the training dataset. It is widely-used method to samples in different frequency depends on the output label for the dataset which is biased. In the original dataset, there are more samples for BRCA. Therefore, the model has a tendency to predict cancer type to BRCA more than the other cancer types.
+
+\subsection{LightGBM accuracy}
+
+While LightGBM is a fast and accurate framework for classification problem, our cancer type classifier based on LightGBM is relatively inaccurate (i.e., classification accuracy for the test dataset is under  40\%) compared to the DNN classifier. The LightGBM classifier shows 99.34\% accuracy for the training dataset but tends to pick only one class for the test dataset. 
+
+We assume that the cause of the inaccuracy is the over-fitting due to the small dataset size. While the leaf-wise tree growth algorithm of LightGBM can achieve smaller loss than level-wise boosting algorithms for the same number of leaves, it is more vulnerable to the over-fitting. Although we have tried parameter tuning for the baseline parameter settings to avoid over-fitting, we have not been able to overcome the limitation of the small dataset size. Most of the machine learning challenges winning solution with LightGBM use dataset with more than 10K rows, while our dataset has only about 2K rows.
+
+To solve the over-fitting problem, more advanced regularization techniques or larger dataset may be required.

@@ -1,0 +1,11 @@
+\section{Background}
+
+Machine learning has been emerged as a promising solution for complex problems such as computer vision, natural language processing, and robot locomotion. In machine learning, users train a model that produces desired output based with a large dataset. One of the advantages of machine learning is that it eliminates the need for explicit programming of the complex task.
+
+Human DNA includes about 20,000 protein-coding genes \cite{ezkurdia2014multiple} and it is slightly different to each other, because the gene can be varies by germline mutation (given from parents) and somatic mutation (caused by cell division). DNA Sequencing \cite{sanger1977dna,anderson1981shotgun,ansorge2009next} is a technology to uncovers the sequence of a human. The speed of sequencing becomes faster by parallelize the process of copying DNA segment and analyze sample with high performance computers.
+
+Genomics has recently introduced machine learning techniques, because human genome data is too huge to be analyzed by human. One of the applications is the cancer type prediction based on somatic point mutations data. DeepGene~\cite{yuan2016deepgene} is a state-of-the-art technique for cancer type classification based on deep learning and somatic point mutations.
+
+In \cite{yuan2016deepgene}, the authors mention three major challenges in cancer type prediction -- (1) only a small subset of genes is related to the cancer classification although genomic sequencing results include extremely large number of genes, (2) even within the small subset, the majority of genes are not related with mutations, which results in sparse gene data, and (3) the correlation between genes and cancer types are so complex that conventional linear classifiers cannot achieve high accuracy. 
+
+DeepGene achieves high accuracy by using the clustered gene filtering (CGF), the indexed sparsity reduction (ISR), and the DNN classifier.

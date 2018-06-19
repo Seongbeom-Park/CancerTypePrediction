@@ -1,0 +1,79 @@
+\documentclass[sigconf, 11pt]{acmart}
+
+\usepackage{booktabs} % For formal tables
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage[hyphenbreaks]{breakurl}
+%\usepackage[hyphens]{url}
+%\usepackage[bookmarksopen,bookmarksdepth=2,breaklinks=true]{hyperref}
+\usepackage{enumitem}
+\usepackage{balance}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage[labelfont={bf},aboveskip=0pt]{caption}
+\usepackage[farskip=0pt,nearskip=0pt,captionskip=0pt]{subfig}
+%\usepackage{underscore}
+\renewcommand\_{\textunderscore\allowbreak}
+
+\newcommand*{\TitleFont}{%
+      \usefont{\encodingdefault}{\rmdefault}{b}{n}%
+      \fontsize{20}{20}%
+      \selectfont}
+
+\setlength{\parskip}{0pt}
+\setlength{\floatsep}{5pt}
+\setlength{\dblfloatsep}{5pt}
+\setlength{\textfloatsep}{5pt}
+\setlength{\dbltextfloatsep}{5pt}
+\setlength{\skip\footins}{7pt}
+
+\widowpenalty=0
+\clubpenalty=0
+\brokenpenalty=0
+
+\AtBeginDocument{%
+ \abovedisplayskip=0pt
+ \abovedisplayshortskip=0pt
+ \belowdisplayskip=0pt
+ \belowdisplayshortskip=0pt
+ \jot=0pt
+}
+
+\linespread{1.0}
+
+\settopmatter{printacmref=false} % Removes citation information below abstract
+\renewcommand\footnotetextcopyrightpermission[1]{} % removes footnote with conference information in first column
+\pagestyle{plain} % removes running headers
+
+\begin{document}
+\title{\TitleFont Classifying Tumor Samples with Genetic Mutations into Cancer Types by Machine Learning Techniques}
+
+\author{Seongbeom Park}
+\affiliation{Student ID : 20165112}
+\email{amita90@unist.ac.kr}
+
+\author{Jinsu Park}
+\affiliation{Student ID : 20165126}
+\email{jinsupark@unist.ac.kr}
+
+\maketitle
+
+\input{intro}
+
+\input{background}
+
+\input{data}
+
+\input{design}
+
+\input{evaluation}
+
+\input{discussion}
+
+\input{conclusions}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{refs}
+
+\end{document}
